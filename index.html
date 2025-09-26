@@ -33,20 +33,60 @@
 
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
-  <!-- Header -->
-  <header class="bg-pink-400 text-white shadow-md sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold">Layanan Jual/Beli dan Service Komputer Cilegon</h1>
-      <nav class="space-x-6">
-        <a href="#layanan" class="hover:text-yellow-300">Layanan</a>
-        <a href="#tentang" class="hover:text-yellow-300">Tentang Kami</a>
-        <a href="#kontak" class="hover:text-yellow-300">Kontak</a>
-      </nav>
+ <!-- Header -->
+<header class="bg-gradient-to-r from-pink-400 to-pink-500 text-white shadow-lg sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    
+    <!-- Logo + Judul -->
+    <div class="flex items-center space-x-3">
+      <!-- Logo (ikon komputer) -->
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-8 h-8 text-yellow-300" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 4a2 2 0 012-2h14a2 2 0 012 2v12a2 
+                 2 0 01-2 2h-6l2 2v1H9v-1l2-2H5a2 2 0 
+                 01-2-2V4z"/>
+      </svg>
+      <h1 class="text-lg md:text-xl font-bold">
+        Layanan <span class="text-yellow-300">Komputer Cilegon Bergaransi</span>
+      </h1>
     </div>
-  </header>
+
+    <!-- Hamburger Button (HP) -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Navigasi (Desktop) -->
+    <nav class="hidden md:flex space-x-6 text-sm font-semibold">
+      <a href="#layanan" class="hover:text-yellow-200 transition">Layanan</a>
+      <a href="#tentang" class="hover:text-yellow-200 transition">Tentang Kami</a>
+      <a href="#kontak" class="hover:text-yellow-200 transition">Kontak</a>
+    </nav>
+  </div>
+
+  <!-- Navigasi Mobile -->
+  <div id="menu" class="hidden md:hidden bg-pink-500 px-4 py-3 space-y-2 text-sm font-semibold">
+    <a href="#layanan" class="block hover:text-yellow-200">Layanan</a>
+    <a href="#tentang" class="block hover:text-yellow-200">Tentang Kami</a>
+    <a href="#kontak" class="block hover:text-yellow-200">Kontak</a>
+  </div>
+</header>
 
   <!-- Hero Section -->
 <section class="relative bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20 text-left overflow-hidden">
+<!-- Script Toggle Menu -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
   <!-- Floating shapes -->
   <div class="absolute w-24 h-24 bg-blue-400 rounded-full opacity-30 top-10 left-10 animate-float"></div>
   <div class="absolute w-32 h-32 bg-green-400 rounded-full opacity-30 bottom-20 right-20 animate-float"></div>
